@@ -441,3 +441,6 @@ test-results/
 .env.local
 .env.*.local
 !.env.example
+.agents
+
+.agents/skills/
