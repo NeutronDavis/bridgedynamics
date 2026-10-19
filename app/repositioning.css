@@ -1,12 +1,73 @@
-.resource-library{padding-top:2rem}
-.resource-type-list{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:3rem}
-.resource-type-list span{padding:.6rem .9rem;border:1px solid var(--neutral-200);border-radius:2rem;color:var(--neutral-700);background:var(--white);font-size:.86rem;font-weight:680}
-.platform-services{grid-template-columns:repeat(2,1fr)}
-.security-grid{grid-template-columns:repeat(4,1fr)}
-.demo-steps{display:grid;gap:1.25rem;margin:2rem 0 0;padding:0;list-style:none}
-.demo-steps li{display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;padding-top:1rem;border-top:1px solid var(--neutral-200)}
-.demo-steps li>span{color:var(--brand-600);font-size:.72rem;font-weight:800}
-.demo-steps strong{color:var(--brand-950)}
-.demo-steps p{margin:.25rem 0 0;font-size:.9rem}
-@media(max-width:1023px){.security-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.platform-services,.security-grid{grid-template-columns:1fr}}
+.resource-library {
+    padding-top: 2rem
+}
+
+.resource-type-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin-bottom: 3rem
+}
+
+.resource-type-list span {
+    padding: .6rem .9rem;
+    border: 1px solid var(--neutral-200);
+    border-radius: 2rem;
+    color: var(--neutral-700);
+    background: var(--white);
+    font-size: .86rem;
+    font-weight: 680
+}
+
+.platform-services {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.security-grid {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.demo-steps {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none
+}
+
+.demo-steps li {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr;
+    gap: .8rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neutral-200)
+}
+
+.demo-steps li>span {
+    color: var(--brand-600);
+    font-size: .72rem;
+    font-weight: 800
+}
+
+.demo-steps strong {
+    color: var(--brand-950)
+}
+
+.demo-steps p {
+    margin: .25rem 0 0;
+    font-size: .9rem
+}
+
+@media(max-width:1023px) {
+    .security-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:700px) {
+
+    .platform-services,
+    .security-grid {
+        grid-template-columns: 1fr
+    }
+}

@@ -5,12 +5,12 @@ import { MobileNavigation } from "./MobileNavigation";
 export function BrandMark({ className = "brand-icon" }: { className?: string }) {
   return (
     <img
-      src="/images/single.png"
+      src="/images/single.svg"
       alt=""
       aria-hidden="true"
       className={className}
-      width={520}
-      height={288}
+      width={40}
+      height={40}
     />
   );
 }

@@ -14,8 +14,12 @@ export const metadata: Metadata = {
   title: { default: "Bridge Dynamics | Enterprise Business Operating System", template: "%s | Bridge Dynamics" },
   description: siteConfig.description,
   icons: {
-    icon: "/images/single.png",
-    shortcut: "/images/single.png",
+    icon: [
+      { url: "/images/single.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/single.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/images/single.png",
   },
 };
