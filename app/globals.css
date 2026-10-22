@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui";
@@ -87,7 +87,7 @@ body {
   margin: 0;
   color: var(--neutral-800);
   background: var(--white);
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
@@ -101,7 +101,8 @@ h1, h2, h3, h4 {
   color: var(--brand-950);
   font-weight: 700;
   line-height: 1.2;
-  font-family: "Lora", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -342,7 +343,7 @@ button, input, select, textarea {
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .brand-icon {
@@ -802,7 +803,8 @@ button, input, select, textarea {
 .hero h1 {
   color: var(--brand-950);
   margin-bottom: 1.25rem;
-  font-family: "Lora", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.03em;
 }
 
 .hero .lead {
@@ -1000,7 +1002,8 @@ button, input, select, textarea {
   color: var(--brand-950);
   max-width: 28ch;
   margin-bottom: 0.75rem;
-  font-family: "Lora", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.025em;
 }
 
 .page-hero .lead {
@@ -1039,7 +1042,7 @@ button, input, select, textarea {
 }
 
 .challenge h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
 }
@@ -1186,7 +1189,7 @@ button, input, select, textarea {
   flex-shrink: 0;
 }
 
-.industry-row h3 { margin: 0; font-family: "Poppins", sans-serif; }
+.industry-row h3 { margin: 0; font-family: "Plus Jakarta Sans", sans-serif; }
 .industry-row p { margin: 0; }
 
 .trust-grid {
@@ -1241,7 +1244,7 @@ button, input, select, textarea {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   margin-bottom: 1.5rem;
 }
 
@@ -1480,7 +1483,7 @@ button, input, select, textarea {
   line-height: 1.25;
   color: var(--white);
   margin-bottom: 0.85rem;
-  font-family: "Lora", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .price-card__badge {
