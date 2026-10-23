@@ -3,23 +3,28 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --color-primary: oklch(50% 0.134 242.749);
+  --color-secondary: oklch(39.1% 0.09 240.876);
+}
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
   prefersdark: false;
   color-scheme: light;
 
-  --color-primary: oklch(58% 0.17 260); /* #6875e9 / vibrant purplish-blue */
+  --color-primary: oklch(50% 0.134 242.749);
   --color-primary-content: oklch(99% 0 0);
-  --color-secondary: #0d62f9; /* #0d62f9 / vibrant teal */
+  --color-secondary: oklch(39.1% 0.09 240.876);
   --color-secondary-content: oklch(99% 0 0);
-  --color-accent: #0d62f9;
-  --color-neutral: oklch(25% 0.05 260);
+  --color-accent: oklch(39.1% 0.09 240.876);
+  --color-neutral: oklch(25% 0.05 242.749);
   --color-neutral-content: oklch(98% 0 0);
   --color-base-100: oklch(100% 0 0); /* #ffffff */
   --color-base-200: oklch(98% 0.005 240); /* #fafafa */
   --color-base-300: oklch(94% 0.01 240); /* #f2f2f2 */
-  --color-base-content: oklch(20% 0.04 260);
+  --color-base-content: oklch(20% 0.04 242.749);
 
   --radius-selector: 6px;
   --radius-field: 6px;
@@ -32,11 +37,19 @@
 }
 
 :root {
+  --primary: oklch(50% 0.134 242.749);
+  --primary-content: oklch(99% 0 0);
+  --secondary: oklch(39.1% 0.09 240.876);
+  --secondary-content: oklch(99% 0 0);
+  --accent: oklch(39.1% 0.09 240.876);
+
+  --brand-primary: oklch(50% 0.134 242.749);
+  --brand-secondary: oklch(39.1% 0.09 240.876);
   --brand-950: #1a1c1e;
-  --brand-900: #255cb9;
-  --brand-800: #255cb9;
-  --brand-700: #255cb9;
-  --brand-600: #255cb9;
+  --brand-900: oklch(39.1% 0.09 240.876);
+  --brand-800: oklch(42% 0.10 241);
+  --brand-700: oklch(46% 0.12 242);
+  --brand-600: oklch(50% 0.134 242.749);
   --brand-100: #e2e8f0;
   --brand-50: #f8fafc;
   --violet: #6956c9;
@@ -53,9 +66,9 @@
   --neutral-100: #f2f2f2;
   --neutral-50: #fafafa;
   --white: #fff;
-  --success: #255cb9;
+  --success: oklch(50% 0.134 242.749);
   --danger: #ba1a1a;
-  --focus: #255cb9;
+  --focus: oklch(50% 0.134 242.749);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -186,7 +199,7 @@ button, input, select, textarea {
 
 .section--brand {
   position: relative;
-  background-image: linear-gradient(rgba(13, 98, 249, 0.9), rgba(13, 98, 249, 0.9)), url("/images/collaboration-bg.png");
+  background-image: linear-gradient(oklch(50% 0.134 242.749 / 0.92), oklch(39.1% 0.09 240.876 / 0.92)), url("/images/collaboration-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -258,39 +271,39 @@ button, input, select, textarea {
 
 .button--primary {
   color: var(--white);
-  background: #0d62f9;
-  border-color: #0d62f9;
-  box-shadow: 0 4px 14px rgba(13, 98, 249, 0.28);
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px oklch(50% 0.134 242.749 / 0.28);
 }
 
 .button--primary:hover {
-  background: #0848bf;
-  border-color: #0848bf;
-  box-shadow: 0 6px 18px rgba(13, 98, 249, 0.38);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 6px 18px oklch(39.1% 0.09 240.876 / 0.38);
 }
 
 .button--secondary {
-  color: #0d62f9;
-  border-color: rgba(13, 98, 249, 0.35);
+  color: var(--secondary);
+  border-color: oklch(39.1% 0.09 240.876 / 0.35);
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
 }
 
 .button--secondary:hover {
   color: var(--white);
-  border-color: #0d62f9;
-  background: #0d62f9;
+  border-color: var(--secondary);
+  background: var(--secondary);
 }
 
 .button--light {
-  color: #0d62f9;
+  color: var(--primary);
   background: var(--white);
   border-color: var(--white);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .button--light:hover {
-  color: #0848bf;
+  color: var(--secondary);
   background: #f1f5f9;
   border-color: #f1f5f9;
 }
@@ -307,14 +320,14 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #0d62f9;
+  color: var(--primary);
   font-weight: 600;
   text-decoration: none;
   transition: color var(--duration-fast);
 }
 
 .text-link:hover {
-  color: #0d62f9;
+  color: var(--secondary);
   text-decoration: underline;
 }
 
@@ -387,7 +400,7 @@ button, input, select, textarea {
 
 .brand-mark i {
   display: block;
-  background: #0d62f9;
+  background: var(--primary);
   border-radius: 2px 2px 0 0;
 }
 
@@ -410,11 +423,11 @@ button, input, select, textarea {
 }
 
 .desktop-nav > a:not(.button):hover {
-  color: #0d62f9;
+  color: var(--primary);
 }
 
 .desktop-nav > a:not(.button)[aria-current="page"] {
-  color: #0d62f9;
+  color: var(--primary);
   position: relative;
 }
 
@@ -426,7 +439,7 @@ button, input, select, textarea {
   bottom: -0.2rem;
   height: 2px;
   border-radius: 2px;
-  background: #0d62f9;
+  background: var(--primary);
 }
 
 .mobile-nav {
@@ -475,9 +488,9 @@ button, input, select, textarea {
 }
 
 .mobile-menu nav > a:not(.button)[aria-current="page"] {
-  color: #0d62f9;
-  border-left-color: #0d62f9;
-  background: rgba(13, 98, 249, 0.06);
+  color: var(--primary);
+  border-left-color: var(--primary);
+  background: oklch(50% 0.134 242.749 / 0.08);
 }
 
 /* SoftBit curved hero section */
@@ -535,7 +548,7 @@ button, input, select, textarea {
 .hero-mockup-glow {
   position: absolute;
   inset: -15% -10% -18% -10%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.35) 0%, rgba(13, 98, 249, 0.45) 45%, rgba(8, 72, 191, 0.2) 70%, transparent 85%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.35) 0%, oklch(50% 0.134 242.749 / 0.45) 45%, oklch(39.1% 0.09 240.876 / 0.25) 70%, transparent 85%);
   filter: blur(52px);
   z-index: 0;
   pointer-events: none;
@@ -549,7 +562,7 @@ button, input, select, textarea {
   right: 6%;
   height: 48px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.45) 0%, rgba(13, 98, 249, 0.45) 45%, transparent 75%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.45) 0%, oklch(50% 0.134 242.749 / 0.45) 45%, transparent 75%);
   transform: rotateX(72deg) rotateZ(-4deg);
   filter: blur(14px);
   pointer-events: none;
@@ -581,7 +594,7 @@ button, input, select, textarea {
   border: 2px solid rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: -20px 30px 65px -10px rgba(5, 45, 130, 0.38), -5px 12px 28px -5px rgba(13, 98, 249, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  box-shadow: -20px 30px 65px -10px oklch(39.1% 0.09 240.876 / 0.38), -5px 12px 28px -5px oklch(50% 0.134 242.749 / 0.45), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
   animation: heroImageEntrance 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
   will-change: transform, opacity;
 }
@@ -592,7 +605,7 @@ button, input, select, textarea {
   justify-content: space-between;
   padding: 0.45rem 1rem;
   background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(13, 98, 249, 0.08);
+  border-bottom: 1px solid oklch(50% 0.134 242.749 / 0.08);
   gap: 0.75rem;
 }
 
@@ -618,12 +631,12 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(13, 98, 249, 0.06);
+  background: oklch(50% 0.134 242.749 / 0.06);
   padding: 0.16rem 0.65rem;
   border-radius: 9999px;
-  border: 1px solid rgba(13, 98, 249, 0.12);
+  border: 1px solid oklch(50% 0.134 242.749 / 0.12);
   font-size: 0.6rem;
-  color: #0d62f9;
+  color: var(--primary);
   font-weight: 500;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   letter-spacing: -0.01em;
@@ -632,7 +645,7 @@ button, input, select, textarea {
 .url-lock-icon {
   width: 0.55rem;
   height: 0.55rem;
-  color: #0d62f9;
+  color: var(--primary);
   flex-shrink: 0;
 }
 
@@ -671,7 +684,7 @@ button, input, select, textarea {
   -webkit-backdrop-filter: blur(16px);
   border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: 14px;
-  box-shadow: -10px 20px 42px -5px rgba(5, 45, 130, 0.28), 0 5px 16px rgba(13, 98, 249, 0.22);
+  box-shadow: -10px 20px 42px -5px oklch(39.1% 0.09 240.876 / 0.28), 0 5px 16px oklch(50% 0.134 242.749 / 0.22);
   color: #0f172a;
   pointer-events: none;
 }
@@ -690,13 +703,13 @@ button, input, select, textarea {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0d62f9 0%, #0848bf 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(13, 98, 249, 0.35);
+  box-shadow: 0 4px 14px oklch(50% 0.134 242.749 / 0.35);
 }
 
 .floating-badge-icon svg {
@@ -741,8 +754,8 @@ button, input, select, textarea {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: #0d62f9;
-  box-shadow: 0 0 10px #0d62f9;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
 }
 
 @keyframes glowPulse {
@@ -813,7 +826,7 @@ button, input, select, textarea {
 }
 
 .hero .eyebrow {
-  color: #0d62f9;
+  color: var(--primary);
 }
 
 .hero-grid {
@@ -865,28 +878,28 @@ button, input, select, textarea {
 /* Hero Button styling for light background */
 .hero .button--primary {
   color: var(--white);
-  background: #0d62f9;
-  border-color: #0d62f9;
-  box-shadow: 0 4px 14px rgba(13, 98, 249, 0.28);
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px oklch(50% 0.134 242.749 / 0.28);
 }
 
 .hero .button--primary:hover {
-  background: #0848bf;
-  border-color: #0848bf;
-  box-shadow: 0 6px 20px rgba(13, 98, 249, 0.4);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 6px 20px oklch(39.1% 0.09 240.876 / 0.4);
 }
 
 .hero .button--secondary {
-  color: #0d62f9;
-  border-color: rgba(13, 98, 249, 0.35);
+  color: var(--secondary);
+  border-color: oklch(39.1% 0.09 240.876 / 0.35);
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
 }
 
 .hero .button--secondary:hover {
   color: var(--white);
-  border-color: #0d62f9;
-  background: #0d62f9;
+  border-color: var(--secondary);
+  background: var(--secondary);
 }
 
 .trust-line {
@@ -910,7 +923,7 @@ button, input, select, textarea {
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
-  background: #0d62f9;
+  background: var(--primary);
 }
 
 .hero-statement {
@@ -922,7 +935,7 @@ button, input, select, textarea {
 }
 
 .hero-statement span {
-  color: #0d62f9;
+  color: var(--primary);
 }
 
 .hero-monitor-spacer {
@@ -1015,7 +1028,7 @@ button, input, select, textarea {
 }
 
 .page-hero .eyebrow {
-  color: #0d62f9;
+  color: var(--primary);
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1070,7 +1083,7 @@ button, input, select, textarea {
 .suite-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  border-color: rgba(104, 117, 233, 0.2);
+  border-color: oklch(50% 0.134 242.749 / 0.25);
 }
 
 .suite-card__icon {
@@ -1081,13 +1094,13 @@ button, input, select, textarea {
   height: 5rem;
   margin-bottom: 2rem;
   border-radius: 50%;
-  background: #0d62f9;
+  background: var(--primary);
   color: var(--white);
   transition: all var(--duration-fast) ease-out;
 }
 
 .suite-card:hover .suite-card__icon {
-  background: #0d62f9;
+  background: var(--secondary);
 }
 
 .icon {
@@ -1177,7 +1190,7 @@ button, input, select, textarea {
 
 .industry-row > span:first-child,
 .industry-row > .industry-icon {
-  color: var(--brand-600, #0d62f9);
+  color: var(--brand-600, var(--primary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1209,8 +1222,8 @@ button, input, select, textarea {
   gap: 2rem;
   padding: clamp(2.75rem, 6vw, 5.5rem);
   border-radius: 16px;
-  background: #0d62f9;
-  box-shadow: 0px 10px 40px rgba(13, 98, 249, 0.25);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: 0px 10px 40px oklch(50% 0.134 242.749 / 0.25);
   border: none;
 }
 
@@ -1264,17 +1277,17 @@ button, input, select, textarea {
 }
 
 .footer-grid > div > a:not(.brand):not(.footer-action):hover {
-  color: #0d62f9;
+  color: var(--primary);
 }
 
 .footer-action {
-  color: #0d62f9;
+  color: var(--primary);
   font-weight: 700;
   text-decoration: none;
 }
 
 .footer-action:hover {
-  color: #083e9e;
+  color: var(--secondary);
   text-decoration: underline;
 }
 
@@ -1300,7 +1313,7 @@ button, input, select, textarea {
 }
 
 .footer-bottom span:last-child a:hover {
-  color: #0d62f9;
+  color: var(--primary);
 }
 
 /* Additional Enterprise Layout compositions */
@@ -1331,13 +1344,13 @@ button, input, select, textarea {
 
 .platform-principle {
   padding-top: 1.5rem;
-  border-top: 2px solid #0d62f9;
+  border-top: 2px solid var(--primary);
 }
 
 .platform-principle > span {
   display: block;
   margin-bottom: 1.75rem;
-  color: #0d62f9;
+  color: var(--primary);
   font-size: 0.76rem;
   font-weight: 800;
 }
@@ -1368,7 +1381,7 @@ button, input, select, textarea {
 }
 
 .platform-flow__number {
-  color: #0d62f9;
+  color: var(--primary);
   font-size: 0.76rem;
   font-weight: 800;
 }
@@ -1407,7 +1420,7 @@ button, input, select, textarea {
 
 .content-visual > span {
   margin-bottom: 0.5rem;
-  color: #0d62f9;
+  color: var(--primary);
   font-size: 0.76rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1416,7 +1429,7 @@ button, input, select, textarea {
 
 .content-visual > div {
   padding: 0.6rem 0 0.6rem 1.25rem;
-  border-left: 3px solid #0d62f9;
+  border-left: 3px solid var(--primary);
   color: var(--brand-950);
   font-weight: 600;
   font-size: 1.15rem;
@@ -1442,16 +1455,16 @@ button, input, select, textarea {
 
 .comparison-panel--brand {
   position: relative;
-  background: linear-gradient(rgba(13, 98, 249, 0.9), rgba(13, 98, 249, 0.9));
+  background: linear-gradient(oklch(50% 0.134 242.749 / 0.95), oklch(39.1% 0.09 240.876 / 0.95));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-color: #0d62f9;
+  border-color: var(--primary);
   color: var(--white);
 }
 
 .comparison-panel__label {
-  color: var(--brand-900);
+  color: var(--secondary);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.12em;
